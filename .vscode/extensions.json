@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "anthropic.claude-code",
+    "github.vscode-github-actions",
+    "skellock.just"
+  ]
+}

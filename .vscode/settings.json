@@ -1,0 +1,17 @@
+{
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "[just]": {
+    "editor.tabSize": 4,
+  },
+  "chat.tools.urls.autoApprove": {
+    "https://code.claude.com": {
+      "approveRequest": false,
+      "approveResponse": true
+    }
+  },
+  "chat.tools.terminal.autoApprove": {
+    "checksy": true,
+    "just": true
+  }
+}

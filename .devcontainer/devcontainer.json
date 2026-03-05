@@ -1,0 +1,28 @@
+{
+  "name": "dev",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/notwillk/devcontainer-features/checksy": {},
+    "ghcr.io/notwillk/devcontainer-features/claude-auth-persist": {},
+    "ghcr.io/notwillk/devcontainer-features/just": {},
+    "ghcr.io/notwillk/devcontainer-features/jq": {},
+    "ghcr.io/notwillk/devcontainer-features/opencode": {},
+    "ghcr.io/notwillk/devcontainer-features/watchexec": {}
+  },
+	"containerEnv": {
+		"REPO_PATH": "${containerWorkspaceFolder}",
+    "DEVCONTAINER": "true"
+	},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "anthropic.claude-code",
+        "github.vscode-github-actions",
+        "skellock.just"
+      ]
+    }
+  },
+  "remoteUser": "vscode",
+  "postCreateCommand": "just doctor --fix",
+  "postStartCommand": "just doctor"
+}

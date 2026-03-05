@@ -1,0 +1,8 @@
+rules:
+  - name: no trailing whitespace
+    check: '! grep -rn " $" --include="*.md" --include="*.yaml" --include="*.json" --include="*.txt" .'
+    severity: error
+  - name: no pending format issues
+    check: just format --check
+    fix: just format
+    severity: error
