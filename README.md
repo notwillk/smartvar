@@ -20,10 +20,38 @@ With optional:
 
 ## Installation
 
+**Via install script (Linux/macOS):**
+
+```sh
+curl -fsSL https://github.com/notwillk/smartvar/releases/latest/download/install.sh | sh
+```
+
+To pin a specific version:
+
+```sh
+SMARTVAR_VERSION=v0.1.0 curl -fsSL https://github.com/notwillk/smartvar/releases/latest/download/install.sh | sh
+```
+
+**Windows:**
+
+Download the `.zip` for your architecture from the [releases page](https://github.com/notwillk/smartvar/releases/latest), extract `smartvar.exe`, and add it to your `PATH`.
+
+**From source:**
+
 ```sh
 just build
 # binary at bin/smartvar
 ```
+
+## Releases
+
+Binaries for Linux, macOS, and Windows (amd64/arm64) are published automatically when a version tag is pushed:
+
+```sh
+git tag v0.1.0 && git push --tags
+```
+
+GoReleaser builds the binaries, creates a GitHub release, and uploads the install script as a release asset.
 
 ## Commands
 

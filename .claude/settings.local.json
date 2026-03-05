@@ -6,7 +6,9 @@
       "Bash(go version)",
       "Bash(go mod tidy)",
       "Bash(just build)",
-      "Bash(just test)"
+      "Bash(just test)",
+      "Bash(git remote get-url origin)",
+      "Bash(goreleaser check)"
     ]
   }
 }
