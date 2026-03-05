@@ -15,6 +15,15 @@ rules:
     check: 'which watchexec > /dev/null 2>&1'
     severity: error
 
+  - name: go is available
+    check: 'which go > /dev/null 2>&1'
+    severity: error
+
+  - name: go module dependencies are synced
+    check: 'go mod verify > /dev/null 2>&1'
+    fix: 'go mod tidy'
+    severity: error
+
   - name: vscode extension recommendations match devcontainer
     check: >
       diff

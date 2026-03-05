@@ -4,6 +4,7 @@
   "features": {
     "ghcr.io/notwillk/devcontainer-features/checksy": {},
     "ghcr.io/notwillk/devcontainer-features/claude-auth-persist": {},
+    "ghcr.io/notwillk/devcontainer-features/golang": {},
     "ghcr.io/notwillk/devcontainer-features/just": {},
     "ghcr.io/notwillk/devcontainer-features/jq": {},
     "ghcr.io/notwillk/devcontainer-features/opencode": {},
@@ -18,6 +19,7 @@
       "extensions": [
         "anthropic.claude-code",
         "github.vscode-github-actions",
+        "golang.go",
         "skellock.just"
       ]
     }

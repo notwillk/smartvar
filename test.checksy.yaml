@@ -1,4 +1,24 @@
 rules:
-  - name: placeholder
-    check: echo "Test..."
+  - name: go tests pass
+    check: 'go test ./...'
+    severity: error
+
+  - name: simple-values fixture compiles
+    check: 'go run ./cmd/smartvar compile --config fixtures/simple-values/smartvar.yaml --no-stdin > /dev/null'
+    severity: error
+
+  - name: interpolation fixture compiles
+    check: 'go run ./cmd/smartvar compile --config fixtures/interpolation/smartvar.yaml --no-stdin > /dev/null'
+    severity: error
+
+  - name: command-values fixture compiles
+    check: 'go run ./cmd/smartvar compile --config fixtures/command-values/smartvar.yaml --no-stdin > /dev/null'
+    severity: error
+
+  - name: validation fixture compiles
+    check: 'go run ./cmd/smartvar compile --config fixtures/validation/smartvar.yaml --no-stdin > /dev/null'
+    severity: error
+
+  - name: env-overrides fixture compiles with env-file
+    check: 'go run ./cmd/smartvar compile --config fixtures/env-overrides/smartvar.yaml --env-file fixtures/env-overrides/input.env --no-stdin > /dev/null'
     severity: error

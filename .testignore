@@ -6,6 +6,7 @@
 .schemas
 .testignore
 .vscode/
+bin/
 dist/
 node_modules/
 docs/
@@ -13,3 +14,4 @@ LICENSE
 *.log
 *.md
 *.txt
+go.sum
