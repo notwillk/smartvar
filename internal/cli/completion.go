@@ -16,8 +16,8 @@ Examples:
   smartvar completion bash > /etc/bash_completion.d/smartvar
   smartvar completion zsh > ~/.zfunc/_smartvar
   smartvar completion fish > ~/.config/fish/completions/smartvar.fish`,
-	Args:              cobra.ExactArgs(1),
-	ValidArgs:         []string{"bash", "zsh", "fish"},
+	Args:               cobra.ExactArgs(1),
+	ValidArgs:          []string{"bash", "zsh", "fish"},
 	DisableFlagParsing: false,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		switch args[0] {

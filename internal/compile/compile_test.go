@@ -261,8 +261,8 @@ func TestCompileCommandValue(t *testing.T) {
 func TestCompileCommandInterpolation(t *testing.T) {
 	cfg := &config.Config{
 		Vars: map[string]config.VarDef{
-			"PREFIX":  {Value: "hello"},
-			"RESULT":  {Command: "echo ${PREFIX}-world"},
+			"PREFIX": {Value: "hello"},
+			"RESULT": {Command: "echo ${PREFIX}-world"},
 		},
 	}
 	result, err := Compile(Options{

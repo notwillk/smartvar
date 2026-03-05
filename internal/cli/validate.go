@@ -12,9 +12,9 @@ import (
 )
 
 var validateCmd = &cobra.Command{
-	Use:       "validate <pattern>",
-	Short:     "Validate a value from stdin against a named pattern",
-	Long:      `Read a value from stdin and validate it against a built-in pattern.
+	Use:   "validate <pattern>",
+	Short: "Validate a value from stdin against a named pattern",
+	Long: `Read a value from stdin and validate it against a built-in pattern.
 
 Built-in patterns: email, url, hostname, uuid, int, bool, port
 
