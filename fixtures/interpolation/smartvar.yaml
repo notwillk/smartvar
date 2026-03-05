@@ -1,0 +1,25 @@
+vars:
+  BASE_URL:
+    value: "https://api.example.com"
+
+  API_VERSION:
+    value: "v1"
+
+  API_ENDPOINT:
+    value: "${BASE_URL}/${API_VERSION}"
+
+  SERVICE_NAME:
+    value: "myservice"
+
+  SERVICE_URL:
+    value: "${BASE_URL}/services/${SERVICE_NAME}"
+
+  # Defined after the vars that reference it — dependency graph handles ordering.
+  HOST:
+    value: "example.com"
+
+  PORT:
+    value: "8080"
+
+  BIND_ADDR:
+    value: "${HOST}:${PORT}"

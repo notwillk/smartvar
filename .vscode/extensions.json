@@ -2,6 +2,7 @@
   "recommendations": [
     "anthropic.claude-code",
     "github.vscode-github-actions",
+    "golang.go",
     "skellock.just"
   ]
 }

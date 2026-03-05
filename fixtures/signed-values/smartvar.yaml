@@ -1,0 +1,20 @@
+vars:
+  # SIGNING_PUBLIC_KEY must be set as an environment variable.
+  # It is a base64-encoded ed25519 public key.
+  # PAYLOAD_SIGNATURE must be a base64-encoded ed25519 signature over CONFIG_PAYLOAD.
+
+  CONFIG_PAYLOAD:
+    value: "${SIGNED_PAYLOAD}"
+    signature:
+      algorithm: ed25519
+      key: "${SIGNING_PUBLIC_KEY}"
+      signature: "${PAYLOAD_SIGNATURE}"
+
+  # A static signed value whose key and signature are embedded in the config.
+  # Set STATIC_SIGN_KEY and STATIC_SIGN_SIG before running.
+  VERIFIED_BUILD_ID:
+    value: "${SIGNED_BUILD_ID}"
+    signature:
+      algorithm: ed25519
+      key: "${STATIC_SIGN_KEY}"
+      signature: "${STATIC_SIGN_SIG}"

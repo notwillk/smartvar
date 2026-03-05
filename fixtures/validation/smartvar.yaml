@@ -1,0 +1,28 @@
+vars:
+  PORT:
+    value: "8080"
+    test: port
+
+  API_URL:
+    value: "https://api.example.com"
+    test: url
+
+  ADMIN_EMAIL:
+    value: "admin@example.com"
+    test: email
+
+  MAX_CONNECTIONS:
+    value: "100"
+    test: int
+
+  DEBUG_MODE:
+    value: "false"
+    test: bool
+
+  REQUEST_ID:
+    value: "550e8400-e29b-41d4-a716-446655440000"
+    test: uuid
+
+  API_HOST:
+    value: "api.example.com"
+    test: hostname

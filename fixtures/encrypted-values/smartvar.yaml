@@ -1,0 +1,31 @@
+vars:
+  # DECRYPTION_KEY must be set as an environment variable.
+  # It is a hex-encoded 32-byte AES key.
+  # Generate with: openssl rand -hex 32
+
+  DATABASE_PASSWORD:
+    value: "${ENCRYPTED_DB_PASSWORD}"
+    decrypt:
+      algorithm: aes256-gcm
+      key: "${DECRYPTION_KEY}"
+    secret: true
+
+  API_KEY:
+    value: "${ENCRYPTED_API_KEY}"
+    decrypt:
+      algorithm: aes256-gcm
+      key: "${DECRYPTION_KEY}"
+    secret: true
+
+  # INTERNAL_TOKEN is decrypted for use in interpolation but not emitted.
+  INTERNAL_TOKEN:
+    value: "${ENCRYPTED_TOKEN}"
+    decrypt:
+      algorithm: aes256-gcm
+      key: "${DECRYPTION_KEY}"
+      hidden: true
+
+  # This var uses INTERNAL_TOKEN via interpolation after decryption.
+  # (Illustrative — in practice, reference the decrypted var name directly.)
+  SERVICE_ADDR:
+    value: "https://api.example.com"

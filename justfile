@@ -1,16 +1,16 @@
 [no-exit-message]
 build *args:
     @case "{{args}}" in \
-        "") echo "building..." ;; \
-        "--watch") echo "building (with watch)..." ;; \
+        "") go build -o bin/smartvar ./cmd/smartvar ;; \
+        "--watch") watchexec $([ -f .testignore ] && echo '--ignore-file .testignore') -- go build -o bin/smartvar ./cmd/smartvar ;; \
         *) echo "Usage: just build [--watch]" >&2; exit 1 ;; \
     esac
 
 [no-exit-message]
 clean *args:
     @case "{{args}}" in \
-        "") echo "cleaning..." ;; \
-        "--deep") echo "cleaning..." && echo "deep cleaning..." && rm -f .schemas/*.json ;; \
+        "") rm -rf bin/ ;; \
+        "--deep") rm -rf bin/ && rm -f .schemas/*.json ;; \
         *) echo "Usage: just clean [--deep]" >&2; exit 1 ;; \
     esac
 
@@ -24,8 +24,8 @@ doctor *args:
 [no-exit-message]
 format *args:
     @case "{{args}}" in \
-        "") echo "formatting..." ;; \
-        "--check") echo "checking format..." ;; \
+        "") gofmt -w . ;; \
+        "--check") ! gofmt -l . | grep -q . ;; \
         *) echo "Usage: just format [--check]" >&2; exit 1 ;; \
     esac
 

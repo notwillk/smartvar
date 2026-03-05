@@ -1,0 +1,13 @@
+vars:
+  HOSTNAME:
+    command: "hostname"
+
+  CURRENT_DATE:
+    command: "date +%Y-%m-%d"
+
+  STATIC_ID:
+    command: "echo 'fixture-id-1234'"
+    cache: true
+
+  UPPER_APP:
+    command: "echo myapp | tr '[:lower:]' '[:upper:]'"

@@ -1,0 +1,18 @@
+vars:
+  DB_HOST:
+    value: "localhost"
+
+  DB_PORT:
+    value: "5432"
+
+  DB_NAME:
+    value: "mydb"
+
+  DB_URL:
+    value: "postgres://${DB_HOST}:${DB_PORT}/${DB_NAME}"
+
+  APP_ENV:
+    value: "development"
+
+  OVERRIDE_ME:
+    value: "default-value"

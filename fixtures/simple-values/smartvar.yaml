@@ -1,0 +1,12 @@
+vars:
+  APP_NAME:
+    value: "myapp"
+
+  APP_VERSION:
+    value: "1.0.0"
+
+  LOG_LEVEL:
+    value: "info"
+
+  ENVIRONMENT:
+    value: "development"
