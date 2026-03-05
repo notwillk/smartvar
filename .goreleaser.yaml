@@ -21,12 +21,14 @@ builds:
 
 archives:
   - id: curl-installer
-    builds:
+    ids:
       - static
-    format: tar.gz
+    formats:
+      - tar.gz
     format_overrides:
       - goos: windows
-        format: zip
+        formats:
+          - zip
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     files:
       - LICENSE*
